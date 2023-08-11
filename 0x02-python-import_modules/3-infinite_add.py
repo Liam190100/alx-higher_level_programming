@@ -10,5 +10,5 @@ if __name__ == "__main__":
         total_sum = current_number + previous_number
         previous_number = total_sum
     
-    print("Total Sum: {}".format(total_sum))
+    print("{}".format(total_sum))
 
