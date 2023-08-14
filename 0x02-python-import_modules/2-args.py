@@ -7,7 +7,7 @@ if __name__ == "__main__":
     if num == 0:
         print("0 argv.")
     elif num == 1:
-        print("1 argv:")
+        print("0 argv:")
     else:
         print("{} argv:".format(num))
     for i in range(num):
