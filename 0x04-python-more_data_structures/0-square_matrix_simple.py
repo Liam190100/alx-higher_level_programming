@@ -6,8 +6,8 @@ def square_matrix_simple(matrix=[]):
         result_row = []
 
         for a in row:
-            new_row.append(x ** 2)
+            result_row.append(a ** 2)
 
-        result_matrix.append(new_row)
+        result_matrix.append(result_row)
 
     return result_matrix
