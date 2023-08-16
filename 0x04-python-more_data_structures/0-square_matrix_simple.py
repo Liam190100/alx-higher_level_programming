@@ -4,7 +4,7 @@ def square_matrix_simple(matrix=[]):
     for row in matrix:
         result_row = []
         for element in row:
-            result_row.append(element **2)
-        result_matrix.append(result_row)
+            result_row.append(element ** 2)
+            result_matrix.append(result_row)
 
     return result_matrix
