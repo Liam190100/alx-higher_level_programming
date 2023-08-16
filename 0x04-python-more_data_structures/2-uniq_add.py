@@ -4,12 +4,12 @@ def uniq_add(my_list=[]):
 
     unique_set = set()
 
-    for num in my_list:
+    for j in my_list:
 
-        unique_set.add(num)
+        unique_set.add(j)
 
-    total_set = 0
+    total_sum = 0
 
-    for num in unique_set:
-        total_set += num
-    return total
+    for j in unique_set:
+        total_sum += j
+    return total_sum
