@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-"""A square module
-This an empty class that defines a square
-"""
+"""This module defines an empty class square"""
+
 
 class Square:
-    
-    """pass to indecate class does nothing"""
-	pass
-
+    """AN empty class representing a square"""
+    pass
