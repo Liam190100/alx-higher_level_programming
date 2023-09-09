@@ -58,10 +58,9 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
     def __str__(self):
-
         if self.__height == 0 or self.__width == 0:
-
             return ''
         rec_str = ''
         for x in range(self.__height):
@@ -78,4 +77,5 @@ class Rectangle:
 
         if self.__height == 0 or self.__width == 0:
             return 0
+
         return 2 * (self.__width + self.__height)

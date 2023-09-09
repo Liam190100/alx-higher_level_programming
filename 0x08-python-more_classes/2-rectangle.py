@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module: rectangle
-Defines the Rectangle class that stores the dimensions of a rectangle and provides methods to calculate area and perimeter.
+Defines the Rectangle
 """
 
 
@@ -101,5 +101,3 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
-
-

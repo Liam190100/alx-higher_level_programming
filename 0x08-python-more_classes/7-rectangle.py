@@ -57,8 +57,8 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-    def __str__(self):
 
+    def __str__(self):
         """Returns the '#' character."""
 
         if self.__height == 0 or self.__width == 0:

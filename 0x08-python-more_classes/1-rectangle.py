@@ -31,7 +31,7 @@ class Rectangle:
             value: width of rectangle
 
         Raises:
-            TypeError: if width not integer 
+            TypeError: if width not integer
             ValueError: if width is less 0 or 1
         """
         if (not isinstance(value, int)):
