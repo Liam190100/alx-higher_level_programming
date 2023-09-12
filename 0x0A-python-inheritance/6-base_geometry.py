@@ -12,4 +12,4 @@ class BaseGeometry:
         """
         Write a class BaseGeometry (based on 5-base_geometry.py).
         """
-        raise Exception("area() not calculated")
+        raise Exception("area() is not implemented")
