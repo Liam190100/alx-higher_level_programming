@@ -1,35 +1,48 @@
 #!/usr/bin/python3
-"""
-Script that reads stdin line by line and computes the metrics
-"""
+"""Script that computes the metrics"""
+
+
 import sys
 
 
-codes = ["200", "301", "400", "401", "403", "404", "405", "500"]
-count = 0
+# Initialize the total file
 total_size = 0
-status_counts = {code: 0 for code in codes}
+status_codes = {
+        "200": 0,
+        "301": 0,
+        "400": 0,
+        "401": 0,
+        "403": 0,
+        "404": 0,
+        "405": 0,
+        "500": 0
+        }
+
+
+def print_stats():
+    """Prints the statistics in file"""
+    print("File size: {}".format(total_size))
+    for code, count in sorted(status_codes.items()):
+        if count > 0:
+            print("{}: {}".format(code, count))
+
 
 try:
-    for line in sys.stdin:
-        count += 1
-        line = line.strip()
-        words = line.split()
-        total_size += int(words[8])
+    # Loop through the lines in the stdin
+    for i, line in enumerate(sys.stdin, 1):
+        # Split the line using spaces
+        tokens = line.split()
+        if len(tokens) > 2:
+            size = tokens[-1]
+            code = tokens[-2]
+            if size.isdigit():
+                total_size += int(size)
+            if code in status_codes:
+                status_codes[code] += 1
+        if i % 10 == 0:
+            print_stats()
+    print_stats()
+except KeyboardInterrupt:
 
-        status_code = words[7]
-        if status_code in codes:
-            status_counts[status_code] += 1
-
-        if count % 10 == 0:
-            print("File size: {}".format(total_size))
-            for code in sorted(status_counts):
-                if status_counts[code] != 0:
-                    print("{}: {}".format(code, status_counts[code]))
-
-except KeyboardInterrupt as e:
-    print("File size: {}".format(total_size))
-    for code in sorted(status_counts):
-        if status_counts[code] != 0:
-            print("{}: {}".format(code, status_counts[code]))
-    print(e)
+    print_stats()
+    raise
