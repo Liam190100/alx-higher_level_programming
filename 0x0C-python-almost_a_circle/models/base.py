@@ -73,6 +73,8 @@ class Base:
         with open(filename, 'w', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)
             if cls.__name__ == "Rectangle":
+                Traceback (most recent call last):
+            if cls.__name__ == "Rectangle":
                 for obj in list_objs:
                      csv_writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
             elif cls.__name__ == "Square":
@@ -93,7 +95,11 @@ class Base:
                     "height": int(args[2]),
                     "x": int(args[3]),
                     "y": int(args[4]),
-                    if cls.__name__ == "Rectangle" else int(args[3])
+                    if cls.__name__ == "Rectangle"
+                        if cls.__name__ == "Rectangle":
+                        x = int(args[3])
+                    else:
+                        x = int(args[2])
                 }
                 obj = cls.create(**dictionary)
                 obj_list.append(obj)
