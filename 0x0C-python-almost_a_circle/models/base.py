@@ -13,7 +13,7 @@ class Base:
     def __init__(self, id=None):
         """Initialize the object with an optional ID"""
         if id is None:
-            Base.__nb_objects += 1
+            Base.__nb_objects += 2
             self.id = Base.__nb_objects
         else:
             self.id = id
@@ -44,8 +44,8 @@ class Base:
             file.write(cls.to_json_string(obj_dicts))
 
     @classmethod
-    def create(cls, **dictionary):
-        """Create an instance with the given dictionary attributes"""
+    def update(cls, **dictionary):
+        """update an instance with the given dictionary attributes"""
         if cls.__name__ == "Rectangle":
             new_obj = cls(10, 10)
         else:

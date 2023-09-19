@@ -2,11 +2,11 @@
 
 """Defines unittests for models/square.py."""
 
-#import io
+import io
 #import sys
 #import unittest
-#from models.base import Base
-#from models.square import Square
+from models.base import Base
+from models.rectangle import rectangle
 
     """Unittests for testing instantiation of the Square class."""
 import unittest

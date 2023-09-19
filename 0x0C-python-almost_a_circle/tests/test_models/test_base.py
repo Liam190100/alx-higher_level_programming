@@ -61,15 +61,15 @@ class TestBase(unittest.TestCase):
     def test_save_to_file(self):
         filename = os.path.join(self.test_dir, "data.json")
         data = [{"id": 1, "name": "test"}]
-        Base.save_to_file(data, filename)
+        Base.save_to_file(data)
         self.assertTrue(os.path.exists(filename))
         with open(filename, 'r') as file:
             content = file.read()
             self.assertEqual(content, '[{"id": 1, "name": "test"}]')
 
-    def test_create(self):
+    def test_update(self):
         dictionary = {"id": 1, "name": "test"}
-        obj = Base.update(**dictionary)
+        obj = Base.create(**dictionary)
         self.assertEqual(obj.id, 1)
         self.assertEqual(obj.name, "test")
 
