@@ -7,6 +7,8 @@ But this time, write one that is safe from MySQL injections!"""
     import MySQLdb
     import sys
 
+if __name__ == '__main__':
+
     db = MySQLdb.connect(host='localhost', port=3306,
                          user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
@@ -16,4 +18,3 @@ But this time, write one that is safe from MySQL injections!"""
     rows = cur.fetchall()
     for row in rows:
         print(row)
-if __name__ == '__main__':
